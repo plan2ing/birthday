@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\Project\\birthday\\birthday.csproj": {}
+    "D:\\Project\\birthday\\birthday.csproj": {}
   },
   "projects": {
-    "D:\\code\\Project\\birthday\\birthday.csproj": {
+    "D:\\Project\\birthday\\birthday.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\Project\\birthday\\birthday.csproj",
+        "projectUniqueName": "D:\\Project\\birthday\\birthday.csproj",
         "projectName": "birthday",
-        "projectPath": "D:\\code\\Project\\birthday\\birthday.csproj",
-        "packagesPath": "C:\\Users\\flame\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\Project\\birthday\\obj\\",
+        "projectPath": "D:\\Project\\birthday\\birthday.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Project\\birthday\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\flame\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
