@@ -1,0 +1,90 @@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IEnumerable<birthday.Models.Users>
+
+@{
+    ViewData["Title"] = "Our Blessing";
+    Layout = "_LayoutLite";
+}
+
+<style>
+    .table td {
+        font-size: 20px;
+    }
+    @@media screen and (min-width: 1200px) {
+        .qoo {
+            margin-left: 250px;
+        }
+    }
+</style>
+
+<div class="card border-secondary qoo">
+    <div class="card-header bg-secondary text-white">
+        <h5>@ViewData["Title"]</h3>
+    </div>
+    <div class="card-body">
+        <div class="overflow-scroll">
+            <div class="row mx-1">
+                <div class="col-md-12">
+                    <div class="float-start">
+                        @Html.PagedListPager((IPagedList)Model, x => Url.Action("Index", "User", new { area = "", page = x}))
+                    </div>
+                    <div class="float-start page-info">
+                        @ViewBag.PageInfo
+                    </div>
+                    <div class="float-end">
+                        @using (Html.BeginForm("Search", "User", new { area = "" }, FormMethod.Post))
+                        {
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span class="control-label fw-bold">查詢條件：</span>
+                                    </td>
+                                    <td class="pr-2">
+                                        <input id="SearchText" name="SearchText" type="text" class="form-control data-list-search-text" placeholder="請輸入查詢條件..." value="@ViewBag.SearchText" style="width:200px;" />
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="查詢" class="btn btn-primary" />
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <colgroup>
+                    <col style="width: 50px;">
+                    <col style="width: 50px;">
+                    <col style="width: 300px;">
+                </colgroup>
+                <thead class="table-secondary">
+                    <tr>
+                        <th>
+                            @Html.ColumnSort("Users.UserNo", @Html.DisplayNameFor(model => model.UserNo))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.UserName", @Html.DisplayNameFor(model => model.UserName))
+                        </th>
+                        <th>
+                            @Html.ColumnSort("Users.Bless", @Html.DisplayNameFor(model => model.Bless))
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td style="white-space: pre-wrap; word-break: break-all; text-align: left;">@System.Text.RegularExpressions.Regex.Replace(item.Bless.Trim(), @"\s+", " ")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
